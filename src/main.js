@@ -8,6 +8,15 @@ import './assets/fonts/iconfont.css'
 import './assets/css/global.css'
 
 import axios from 'axios'
+// 拦截器要在挂载原型之前放置
+// axios.interceptors.request就是拦截器，后面是挂载了一个预处理函数
+// config就是请求对象,请求对象中有请求头的信息
+axios.interceptors.request.use((config) => {
+    // console.log(config)
+    config.headers.Authorization = window.sessionStorage.getItem('token')
+    return config
+
+})
 // 挂载到Vue的原型对象上，每一个组件就可以通过this访问到$http，从而发送请求
 Vue.prototype.$http = axios
 // 配置请求的根路径

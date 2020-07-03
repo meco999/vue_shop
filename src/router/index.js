@@ -2,13 +2,37 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/login.vue'
 import Home from '../components/Home.vue'
+import Welcome from '../components/Welcome.vue'
+import Users from '../components/user/Users.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: '/login' },
-  { path: '/login', component: Login },
-  { path: '/home', component: Home }
+  {
+    path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    //   先将home组件展示出来，然后重定向到子组件welcome，但是这个页面还是home所渲染出来的的页面
+    //  在home组件中主体区域中添加路由占位符，展示子组件welcome组件的内容
+    path: '/home',
+    component: Home,
+    redirect: '/welcome',
+    children: [
+      {
+        path: '/welcome',
+        component: Welcome
+      },
+      {
+        path: '/users',
+        component: Users
+      }
+    ]
+  }
 ]
 
 const router = new VueRouter({
