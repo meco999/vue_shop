@@ -25,7 +25,7 @@
           :default-active="activePath"
         >
           <el-submenu
-            :index="item.id + ''"
+            :index="item.id + '#'"
             v-for="item in menuLists"
             :key="item.id"
           >
