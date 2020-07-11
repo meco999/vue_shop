@@ -29,10 +29,15 @@ import {
   MessageBox,
   Tag,
   Tree,
-  Cascader
+  Cascader,
+  Alert,
+  Tabs,
+  TabPane
 } from 'element-ui'
 
 // 注册为全局可用组件
+Vue.use(Tabs)
+Vue.use(TabPane)
 Vue.use(Button)
 Vue.use(FormItem)
 Vue.use(Form)
@@ -61,6 +66,7 @@ Vue.use(Dialog)
 Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Cascader)
+Vue.use(Alert)
 // 将这个组件通过$message挂载到所有的Vue实例中去，$nmessage是自定义的
 // 每个组件就可以直接通过this.$message来进行弹窗提示了
 Vue.prototype.$message = Message
