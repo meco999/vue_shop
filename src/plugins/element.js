@@ -37,10 +37,14 @@ import {
   Step,
   Checkbox,
   CheckboxGroup,
-  Upload
+  Upload,
+  Timeline,
+  TimelineItem
 } from 'element-ui'
 
 // 注册为全局可用组件
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 Vue.use(Tabs)
 Vue.use(TabPane)
 Vue.use(Button)
