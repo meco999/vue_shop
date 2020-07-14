@@ -32,7 +32,12 @@ import {
   Cascader,
   Alert,
   Tabs,
-  TabPane
+  TabPane,
+  Steps,
+  Step,
+  Checkbox,
+  CheckboxGroup,
+  Upload
 } from 'element-ui'
 
 // 注册为全局可用组件
@@ -67,6 +72,11 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Cascader)
 Vue.use(Alert)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Upload)
 // 将这个组件通过$message挂载到所有的Vue实例中去，$nmessage是自定义的
 // 每个组件就可以直接通过this.$message来进行弹窗提示了
 Vue.prototype.$message = Message
